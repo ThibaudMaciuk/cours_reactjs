@@ -58,8 +58,7 @@ import Mailconf from '../mailconfirmation/mailconfirmation';
 interface Pays {
     name: {
         common: string;
-    },
-    submit_value: string;
+    };
 }
 
 function Pays_Selected() {
@@ -76,6 +75,10 @@ function Pays_Selected() {
             .then((response) => response.json())
             .then((data) => {
                 return data as Pays[]; // Assurez-vous que les données sont du type Pays[]
+            })
+            .catch((error) => {
+                console.error(error);
+                return [];
             });
     }
 
@@ -178,3 +181,5 @@ function Pays_Selected() {
 }
 
 export default Pays_Selected;
+
+//usestate loading
